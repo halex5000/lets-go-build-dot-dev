@@ -1,4 +1,4 @@
-import { Text, Row, Card } from "@nextui-org/react";
+import { Text, Card } from "@nextui-org/react";
 import React, { useState } from "react";
 import { Fira_Code } from "next/font/google";
 import { TypeAnimation } from "react-type-animation";
@@ -13,17 +13,13 @@ const codeFont = Fira_Code({
 const delay = 600;
 
 export default function CenterTyping() {
-  const [isTypingName, setIsTypingName] = useState(true);
   return (
     <Card
       css={{
         width: 400,
       }}
     >
-      <Card.Header
-        className={codeFont.className}
-        css={{ justifyContent: "center", backgroundColor: "red" }}
-      >
+      <Card.Header css={{ justifyContent: "center", backgroundColor: "red" }}>
         <Text h4 className={codeFont.className} css={{ pr: "$5" }}>
           Hello, my name is
         </Text>
@@ -47,9 +43,10 @@ export default function CenterTyping() {
         <Text h4 className={codeFont.className} css={{ pr: "$5" }}>
           and I am
         </Text>
-        <Text h3 className={codeFont.className}>
+        <Text h4 className={codeFont.className}>
           <TypeAnimation
             cursor
+            repeat={Infinity}
             sequence={[
               "an inventor",
               delay,

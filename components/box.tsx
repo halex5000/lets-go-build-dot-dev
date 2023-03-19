@@ -1,4 +1,4 @@
-import { Container, styled } from "@nextui-org/react";
+import { Container } from "@nextui-org/react";
 import React, { ReactNode } from "react";
 
 const Box = ({

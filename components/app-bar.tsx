@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Text } from "@nextui-org/react";
 import Logo from "@/components/logo";
-import { TypeAnimation } from "react-type-animation";
 import { Fira_Code } from "next/font/google";
 
 const codeFont = Fira_Code({
@@ -23,7 +22,7 @@ export default function AppBar({ callback }: { callback?: Function }) {
           h3
           className={codeFont.className}
         >
-          {"let's go build _"}
+          {"let's go build_"}
         </Text>
       </Navbar.Brand>
     </Navbar>

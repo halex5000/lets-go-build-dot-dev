@@ -3,16 +3,10 @@ import Box from "@/components/box";
 import Content from "@/components/content";
 import AppBar from "./app-bar";
 
-export default function Layout({
-  children,
-  callback,
-}: {
-  children: ReactNode;
-  callback: Function;
-}) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
-      <AppBar callback={callback} />
+      <AppBar />
       <Box>
         {children}
         <Content />
