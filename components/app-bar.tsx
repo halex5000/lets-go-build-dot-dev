@@ -24,18 +24,18 @@ export default function AppBar({ callback }: { callback?: Function }) {
           className={codeFont.className}
         >
           <TypeAnimation
-            cursor
+            cursor={false}
             sequence={[
               "let's",
-              500,
+              250,
               "let's go",
-              500,
+              250,
               "let's go build",
-              500,
+              250,
               "let's go build.",
-              500,
+              250,
               "let's go build..",
-              500,
+              250,
               "let's go build...",
               () => {
                 callback && callback();
