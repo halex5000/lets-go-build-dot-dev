@@ -19,7 +19,7 @@ const darkTheme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [typingHeader, setTypingHeader] = useState(true);
+  const [typingHeader, setTypingHeader] = useState(false);
 
   const doneTypingHeader = () => {
     setTypingHeader(false);

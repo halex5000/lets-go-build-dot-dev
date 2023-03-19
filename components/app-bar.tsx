@@ -12,7 +12,7 @@ const codeFont = Fira_Code({
 
 export default function AppBar({ callback }: { callback?: Function }) {
   return (
-    <Navbar>
+    <Navbar variant="static">
       <Navbar.Brand>
         <Logo />
         <Text
@@ -23,25 +23,7 @@ export default function AppBar({ callback }: { callback?: Function }) {
           h3
           className={codeFont.className}
         >
-          <TypeAnimation
-            cursor={false}
-            sequence={[
-              "let's",
-              250,
-              "let's go",
-              250,
-              "let's go build",
-              250,
-              "let's go build.",
-              250,
-              "let's go build..",
-              250,
-              "let's go build...",
-              () => {
-                callback && callback();
-              },
-            ]}
-          ></TypeAnimation>
+          {"let's go build _"}
         </Text>
       </Navbar.Brand>
     </Navbar>

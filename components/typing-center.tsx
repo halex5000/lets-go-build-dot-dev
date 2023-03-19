@@ -1,4 +1,4 @@
-import { Text, Row } from "@nextui-org/react";
+import { Text, Row, Card } from "@nextui-org/react";
 import React, { useState } from "react";
 import { Fira_Code } from "next/font/google";
 import { TypeAnimation } from "react-type-animation";
@@ -12,38 +12,42 @@ const codeFont = Fira_Code({
 
 const delay = 600;
 
-export default function CenterTyping({
-  typingHeader,
-}: {
-  typingHeader: boolean;
-}) {
-  const [isTypingCenter, setIsTypingCenter] = useState(true);
+export default function CenterTyping() {
   const [isTypingName, setIsTypingName] = useState(true);
   return (
-    <Row
-      justify="center"
-      align="center"
-      css={{ position: "absolute", top: "40%" }}
+    <Card
+      css={{
+        width: 400,
+      }}
     >
-      {typingHeader ? (
-        <></>
-      ) : (
+      <Card.Header
+        className={codeFont.className}
+        css={{ justifyContent: "center", backgroundColor: "red" }}
+      >
         <Text h4 className={codeFont.className} css={{ pr: "$5" }}>
-          <TypeAnimation
-            cursor={false}
-            sequence={[
-              "Alex is",
-              () => {
-                setIsTypingName(false);
-              },
-            ]}
-          ></TypeAnimation>
+          Hello, my name is
         </Text>
-      )}
-      {isTypingName ? (
-        <></>
-      ) : (
-        <Text h4 className={codeFont.className}>
+      </Card.Header>
+      <Card.Body
+        css={{
+          textAlign: "center",
+          justifyContent: "center",
+          backgroundColor: "White",
+        }}
+      >
+        <Text
+          h1
+          className={codeFont.className}
+          css={{ pr: "$5", color: "Black" }}
+        >
+          Alex
+        </Text>
+      </Card.Body>
+      <Card.Footer css={{ justifyContent: "center", backgroundColor: "red" }}>
+        <Text h4 className={codeFont.className} css={{ pr: "$5" }}>
+          and I am
+        </Text>
+        <Text h3 className={codeFont.className}>
           <TypeAnimation
             cursor
             sequence={[
@@ -62,13 +66,10 @@ export default function CenterTyping({
               "a software architect",
               delay,
               "a builder",
-              () => {
-                setIsTypingCenter(false);
-              },
             ]}
           ></TypeAnimation>
         </Text>
-      )}
-    </Row>
+      </Card.Footer>
+    </Card>
   );
 }
