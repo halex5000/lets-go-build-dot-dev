@@ -5,7 +5,7 @@ import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { motion } from "framer-motion";
 import Layout from "@/components/layout";
-import AppBar from "@/components/app-bar";
+import Head from "next/head";
 import { Fira_Code } from "next/font/google";
 
 const lightTheme = createTheme({
@@ -35,7 +35,15 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <NextUIProvider>
         <motion.div layout>
-          <Layout className={codeFont.className}>
+          <Head>
+            <title>{"let's go build"}</title>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+          <Layout>
             <Component {...pageProps} />
           </Layout>
         </motion.div>

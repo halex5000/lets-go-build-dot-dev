@@ -3,16 +3,10 @@ import Box from "@/components/box";
 import Content from "@/components/content";
 import AppBar from "./app-bar";
 
-export default function Layout({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <Box className={className}>
-      <AppBar className={className} />
+    <Box>
+      <AppBar />
       {children}
       <Content />
     </Box>
