@@ -10,7 +10,7 @@ const codeFont = Fira_Code({
   style: "normal",
 });
 
-export default function AppBar() {
+export default function AppBar({ callback }: { callback?: Function }) {
   return (
     <Navbar>
       <Navbar.Brand>
@@ -37,6 +37,9 @@ export default function AppBar() {
               "let's go build..",
               500,
               "let's go build...",
+              () => {
+                callback && callback();
+              },
             ]}
           ></TypeAnimation>
         </Text>

@@ -1,12 +1,11 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import React from "react";
+import React, { useState } from "react";
 import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { motion } from "framer-motion";
 import Layout from "@/components/layout";
 import Head from "next/head";
-import { Fira_Code } from "next/font/google";
 
 const lightTheme = createTheme({
   type: "light",
@@ -14,16 +13,18 @@ const lightTheme = createTheme({
 
 const darkTheme = createTheme({
   type: "dark",
-});
-
-// eslint-disable-next-line new-cap
-const codeFont = Fira_Code({
-  subsets: ["latin"],
-  display: "swap",
-  style: "normal",
+  theme: {
+    fonts: {},
+  },
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [typingHeader, setTypingHeader] = useState(true);
+
+  const doneTypingHeader = () => {
+    setTypingHeader(false);
+  };
+
   return (
     <NextThemesProvider
       defaultTheme="system"
@@ -43,8 +44,8 @@ export default function App({ Component, pageProps }: AppProps) {
             />
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <Layout>
-            <Component {...pageProps} />
+          <Layout callback={doneTypingHeader}>
+            <Component {...pageProps} typingHeader={typingHeader} />
           </Layout>
         </motion.div>
       </NextUIProvider>

@@ -9,10 +9,7 @@ const Box = ({
   className?: string;
 }) => {
   return (
-    <Container
-      css={{ px: "$12", mt: "$8", "@xsMax": { px: "$10" }, ml: "$0" }}
-      className={className}
-    >
+    <Container fluid className={className}>
       {children}
     </Container>
   );
