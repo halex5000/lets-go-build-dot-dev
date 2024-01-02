@@ -26,6 +26,11 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <NextUIProvider>
         <Head>
+          <script
+            async
+            type="text/javascript"
+            src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RrGhLY"
+          ></script>
           <title>{"let's go build"}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
